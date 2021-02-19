@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <title>setup1</title>
+    <link href="https://fonts.googleapis.com/css?family=Work+Sans:300,600" rel="stylesheet">
+    <script src="https://unpkg.com/vue@next"></script>
+
+    <style>
+        .row {
+            margin: 50px;
+            display: flex;
+            justify-content: center;
+            font-family: 'Work Sans', sans-serif;
+        }
+
+        input,
+        span {
+            padding: 10px;
+            font-size: 30px;
+            font-family: 'Work Sans', sans-serif;
+        }
+
+        input {
+            width: 50px;
+        }
+
+        span {
+            width: 20px;
+        }
+
+        .second {
+            font-size: 18px;
+        }
+
+        .second p {
+            margin-left: 20px;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="app">
+        <div class="row">
+            <span>1</span>
+            <span>+</span>
+            <span>1</span>
+            <span>=</span>
+            <span>2</span>
+        </div>
+        <div class="row second">
+            <p>My favorite kind of taco is Al Pastor</p>
+        </div>
+    </div>
+    <script>
+        console.log('Hello');
+        const App = {
+            data() {
+                return {
+                    num1: 0,
+                    num2: 0,
+                    name: ''
+                }
+            }
+        }
+
+        Vue.createApp(App).mount('#app')
+    </script>
+</body>
+
+</html>
