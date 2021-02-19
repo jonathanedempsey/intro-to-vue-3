@@ -3,7 +3,7 @@
 
 <head>
     <meta charset="utf-8">
-    <title>setup1</title>
+    <title>Directives Exercise</title>
     <link href="https://fonts.googleapis.com/css?family=Work+Sans:300,600" rel="stylesheet">
     <script src="https://unpkg.com/vue@next"></script>
 
@@ -43,18 +43,24 @@
 <body>
     <div id="app">
         <div class="row">
-            <span>1</span>
+            <input v-model.number="num1" type="number" />
             <span>+</span>
-            <span>1</span>
+            <input v-model.number="num2" type="number" />
             <span>=</span>
-            <span>2</span>
+            <span>{{ num1 + num2 }}</span>
         </div>
+
         <div class="row second">
-            <p>My favorite kind of taco is Al Pastor</p>
+            <select v-model="name">
+                <option>Carne Asada</option>
+                <option>Pollo</option>
+                <option>Bean</option>
+                <option>Al Pastor</option>
+            </select>
+            <p v-if="name">My favorite kind of taco is {{ name }}</p>
         </div>
     </div>
     <script>
-        console.log('Hello');
         const App = {
             data() {
                 return {
