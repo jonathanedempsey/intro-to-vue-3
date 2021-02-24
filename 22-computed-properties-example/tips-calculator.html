@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <title>Computed Properties Example</title>
+    <script src="https://unpkg.com/vue@next"></script>
+
+    <style>
+        body {
+            font-family: 'Bitter', serif;
+        }
+
+        #app {
+            text-align: center;
+            max-width: 320px;
+            margin: 50px auto;
+            display: table;
+            padding: 10px 40px;
+            border: 1px solid black;
+        }
+
+        h2 {
+            border-bottom: 1px solid #ccc;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="app">
+        <h2>Tips Calculator</h2>
+        <p><strong>Total: {{ customer1total }}</strong></p>
+        <p>20%: {{ tip20 }}</p>
+    </div>
+
+    <script>
+        const App = {
+            data() {
+                return {
+                    customer1total: 35.43
+                }
+            },
+            computed: {
+                tip20() {
+                    return (this.customer1total * .2).toFixed(2)
+                }
+            }
+        }
+
+        Vue.createApp(App).mount("#app")
+    </script>
+</body>
+
+</html>
