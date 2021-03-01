@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <title>Watchers Intro</title>
+    <script src="https://unpkg.com/vue@next"></script>
+
+    <style>
+        #app {
+            margin: 60px auto;
+            display: table;
+            font-size: 60px;
+
+        }
+
+        input {
+            width: 100px;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="app">
+        <input type="number" v-model.number="counter"></input>
+    </div>
+
+    <script>
+        const App = {
+            data() {
+                return {
+                    counter: 0
+                }
+            },
+            watch: {
+                counter(oldValue, newValue) {
+                    console.log(`The counter has changed! It was ${oldValue}, it's now ${newValue}`);
+                }
+            }
+        }
+
+        Vue.createApp(App).mount('#app')
+    </script>
+</body>
+
+</html>
