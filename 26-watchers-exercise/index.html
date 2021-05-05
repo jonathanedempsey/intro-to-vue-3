@@ -37,7 +37,8 @@
             <button @click="getTaco">
                 Click me to order a taco
             </button>
-            <h2>Where is my taco...</h2>
+            <h2>{{ orderStatus }}</h2>
+            <p v-if="orderSubmitted">{{ orderSubmitted }}</p>
         </div>
     </div>
 
@@ -45,12 +46,21 @@
         const App = {
             data() {
                 return {
-                    orderStatus: '',
+                    orderStatus: 'where is my taco...',
                     orderSubmitted: null
                 }
             },
             methods: {
-                getTaco() {}
+                getTaco() {
+                    this.orderStatus = '🌮!'
+                }
+            },
+            watch: {
+                orderStatus(newValue, oldValue) {
+                    this.orderSubmitted = 'your order was submitted!'
+
+                    setTimeout(() => this.orderSubmitted = null, 1000);
+                }
             }
         }
 
